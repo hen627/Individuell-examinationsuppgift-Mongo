@@ -1,0 +1,34 @@
+
+< Structure: 
+
+<booking
+Info to save : Date you want to book
+Email : booking users email
+time: 60min intervals
+people : amount of people
+lanes : 8 bookable lanes with individual id´s that get booked to the lane
+        you dont get to select lanes, just amount.
+shoesizes : every persons shoesize, amount = amount of people.
+price : 120kr per person + 100kr per lane
+bookingnumber : automatically generated bookingnumber per order.
+>
+
+<lanes
+ id: 1-8
+ bookedTime: Can select anytime you want and it locks up the lane for 60 minutes.
+ bookedDate: Saves what date the booking is for
+>
+< todo
+
+<lanes created>
+<validating data done>
+<create orders>
+change orders
+delete orders
+<can't book a lane that is already booked>
+be able to find your booking with bookingnumber.
+
+< VG
+
+be able to search for bookings between specific dates.
+
