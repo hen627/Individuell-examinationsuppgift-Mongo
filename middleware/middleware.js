@@ -6,7 +6,6 @@ const validateData = (req, res, next) => {
     const bData = req.body;
     const timeValidator = /^(([1]{1}[2-9]{1})|([2]{1}[0-2]{1}))(([:]{1})?)(([0-5]{1}[0-9]?)?)$/;
     const dateValidator = moment(bData.date)
-    console.log("hello")
 try{
     if (!bData.email.includes("@")){
         console.log("invalid email")

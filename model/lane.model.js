@@ -117,8 +117,8 @@ async function updateLanesBooked(bData){
         },
         {$set: {
             id: laneId,
-            bookedDate: bData.time,
-            bookedTime: bData.date,
+            bookedDate: bData.date,
+            bookedTime: bData.time,
           }
         });
     }
@@ -133,14 +133,17 @@ async function deleteLaneBooking(bData){
 }
 
 async function searchLaneBookings(bData){
+    const date2 = new Date(bData.date2);
+    date2.setDate(date2.getDate() + 1);
     
     const lanesBooked = await Lanes.find({
         bookedDate: {
             $gte: bData.date,
-            $lt: bData.date2
+            $lt: date2.toISOString().slice(0, 10)
         }
     });
     return lanesBooked
 }
+
 
 module.exports = {createLanes, bookLanes, checkLanes, checkLanes2, updateLanesBooked, deleteLaneBooking, searchLaneBookings};

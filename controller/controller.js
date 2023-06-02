@@ -61,11 +61,17 @@ const getBooking = async (req, res) => {
 const searchBookings = async (req, res) => {
     const bData = req.body;
     const bookings = await searchLaneBookings(bData)
-    if (bookings) {
+    if (bookings.length > 0) {
         return res.status(200).json({
             success: true,
             message: "these are the found bookings",
             message: bookings
+          });
+    }
+    else {
+        return res.status(400).json({
+            success: true,
+            message: "no bookings found"
           });
     }
 }
